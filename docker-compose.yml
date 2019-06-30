@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dev:
+    container_name: capybara_screenshots
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash start.sh 5000 development
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000
+    stdin_open: true
+    tty: true
